@@ -655,6 +655,11 @@ $settings['update_free_access'] = FALSE;
 $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 
 /**
+ * Comando nuevo de la tarea
+ */
+$settings['config_sync_directory'] = '../config/sync';
+
+/**
  * Override the default service container class.
  *
  * This is useful for example to trace the service container for performance
@@ -775,6 +780,6 @@ if (file_exists(__DIR__ . '/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 
  * Keep this code block at the end of this file to take full effect.
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
