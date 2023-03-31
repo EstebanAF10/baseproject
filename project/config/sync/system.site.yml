@@ -1,9 +1,9 @@
 _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
-uuid: de075172-b039-475f-9334-245217c70ed3
-name: 'Umami Food Magazine'
-mail: info@info.com
+uuid: 8d5bca03-f9e0-420f-9a9e-76662545a78b
+name: TM7101
+mail: admin@example.com
 slogan: ''
 page:
   403: ''
