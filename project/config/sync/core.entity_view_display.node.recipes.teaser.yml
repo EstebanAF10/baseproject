@@ -5,11 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.recipes.body
+    - field.field.node.recipes.field_chef
     - field.field.node.recipes.field_cook_time
     - field.field.node.recipes.field_cuisine_type
     - field.field.node.recipes.field_difficulty
     - field.field.node.recipes.field_ingredients_
     - field.field.node.recipes.field_media
+    - field.field.node.recipes.field_plate_format
     - node.type.recipes
   module:
     - text
@@ -33,8 +35,10 @@ content:
     weight: 100
     region: content
 hidden:
+  field_chef: true
   field_cook_time: true
   field_cuisine_type: true
   field_difficulty: true
   field_ingredients_: true
   field_media: true
+  field_plate_format: true

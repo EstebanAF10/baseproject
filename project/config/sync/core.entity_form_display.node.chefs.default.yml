@@ -1,24 +1,18 @@
-uuid: 82506627-959b-4fe7-ac7d-d89de956458f
+uuid: 68b20d0a-481d-4dc4-b399-176236fb9e4b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.recipes.body
-    - field.field.node.recipes.field_chef
-    - field.field.node.recipes.field_cook_time
-    - field.field.node.recipes.field_cuisine_type
-    - field.field.node.recipes.field_difficulty
-    - field.field.node.recipes.field_ingredients_
-    - field.field.node.recipes.field_media
-    - field.field.node.recipes.field_plate_format
-    - node.type.recipes
+    - field.field.node.chefs.body
+    - field.field.node.chefs.field_media
+    - field.field.node.chefs.field_specialty
+    - node.type.chefs
   module:
-    - media_library
     - path
     - text
-id: node.recipes.default
+id: node.chefs.default
 targetEntityType: node
-bundle: recipes
+bundle: chefs
 mode: default
 content:
   body:
@@ -37,57 +31,19 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_chef:
+  field_media:
     type: entity_reference_autocomplete
-    weight: 128
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_cook_time:
-    type: number
-    weight: 123
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_cuisine_type:
-    type: entity_reference_autocomplete
-    weight: 125
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_difficulty:
-    type: options_select
-    weight: 126
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_ingredients_:
-    type: string_textfield
     weight: 122
     region: content
     settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_media:
-    type: media_library_widget
-    weight: 124
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-  field_plate_format:
+  field_specialty:
     type: entity_reference_autocomplete
-    weight: 127
+    weight: 123
     region: content
     settings:
       match_operator: CONTAINS

@@ -1,0 +1,18 @@
+uuid: 4fed6965-72c7-4191-9bc2-26749590d93b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.chefs
+id: node.chefs.title
+field_name: title
+entity_type: node
+bundle: chefs
+label: "Chef's name"
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

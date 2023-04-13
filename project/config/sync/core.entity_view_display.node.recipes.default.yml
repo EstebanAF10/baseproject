@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.recipes.body
+    - field.field.node.recipes.field_chef
     - field.field.node.recipes.field_cook_time
     - field.field.node.recipes.field_cuisine_type
     - field.field.node.recipes.field_difficulty
     - field.field.node.recipes.field_ingredients_
     - field.field.node.recipes.field_media
+    - field.field.node.recipes.field_plate_format
     - node.type.recipes
   module:
     - options
@@ -25,6 +27,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_chef:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_cook_time:
     type: number_integer
@@ -66,6 +76,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_plate_format:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
     region: content
   links:
     settings: {  }
