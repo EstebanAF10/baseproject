@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.recipes.body
     - field.field.node.recipes.field_chef
+    - field.field.node.recipes.field_comments
     - field.field.node.recipes.field_cook_time
     - field.field.node.recipes.field_cuisine_type
     - field.field.node.recipes.field_difficulty
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.recipes.field_plate_format
     - node.type.recipes
   module:
+    - comment
     - media_library
     - path
     - text
@@ -46,6 +48,12 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_comments:
+    type: comment_default
+    weight: 129
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_cook_time:
     type: number
