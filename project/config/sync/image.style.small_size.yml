@@ -1,0 +1,14 @@
+uuid: a950edf7-0865-4f11-85fa-5bfda24db484
+langcode: en
+status: true
+dependencies: {  }
+name: small_size
+label: Small_size
+effects:
+  1015cb62-9f58-4a45-b95c-ac18f1cc9a5e:
+    uuid: 1015cb62-9f58-4a45-b95c-ac18f1cc9a5e
+    id: image_resize
+    weight: 1
+    data:
+      width: 500
+      height: 300

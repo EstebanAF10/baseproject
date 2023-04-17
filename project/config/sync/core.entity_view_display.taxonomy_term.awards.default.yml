@@ -1,0 +1,22 @@
+uuid: eb5acebb-356c-42a4-9ba5-4f109a8dc101
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.awards
+  module:
+    - text
+id: taxonomy_term.awards.default
+targetEntityType: taxonomy_term
+bundle: awards
+mode: default
+content:
+  description:
+    type: text_trimmed
+    label: visually_hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

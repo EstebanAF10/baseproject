@@ -1,0 +1,23 @@
+uuid: 59a76bd5-074b-4914-9570-9b621a8e31a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.restaurants_
+  module:
+    - text
+id: node.restaurants_.body
+field_name: body
+entity_type: node
+bundle: restaurants_
+label: Review
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

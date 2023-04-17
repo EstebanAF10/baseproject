@@ -1,0 +1,8 @@
+uuid: f3723922-899f-4b24-af14-3d12d6c3dcb0
+langcode: en
+status: true
+dependencies: {  }
+name: Awards
+vid: awards
+description: 'List of restaurant awards'
+weight: 0

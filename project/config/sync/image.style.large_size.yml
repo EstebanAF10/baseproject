@@ -1,0 +1,14 @@
+uuid: 6595e3fd-5c80-4a86-bb8d-d779ef630a38
+langcode: en
+status: true
+dependencies: {  }
+name: large_size
+label: Large_size
+effects:
+  5b558309-a6bc-4709-9ac6-cfdee7f50ab3:
+    uuid: 5b558309-a6bc-4709-9ac6-cfdee7f50ab3
+    id: image_resize
+    weight: 1
+    data:
+      width: 1000
+      height: 800

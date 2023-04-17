@@ -1,0 +1,52 @@
+uuid: 0680d1c9-a7da-4e38-b262-2d38a63d9806
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.restaurants_.body
+    - field.field.node.restaurants_.field_location
+    - field.field.node.restaurants_.field_photos
+    - image.style.large_size
+    - node.type.restaurants_
+  module:
+    - image
+    - text
+    - user
+id: node.restaurants_.full
+targetEntityType: node
+bundle: restaurants_
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_photos:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: large_size
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
