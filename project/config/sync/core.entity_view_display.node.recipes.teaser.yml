@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.recipes.field_plate_format
     - node.type.recipes
   module:
+    - media
     - text
     - user
 id: node.recipes.teaser
@@ -23,17 +24,28 @@ bundle: recipes
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: text_trimmed
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 140
     third_party_settings: {  }
-    weight: 101
+    weight: 1
+    region: content
+  field_media:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   field_chef: true
@@ -42,5 +54,4 @@ hidden:
   field_cuisine_type: true
   field_difficulty: true
   field_ingredients_: true
-  field_media: true
   field_plate_format: true

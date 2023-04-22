@@ -1,0 +1,37 @@
+uuid: 8982ae7f-da1b-4774-87cc-cb7ad6aa22fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - node
+    - system
+  theme:
+    - olivero
+id: tools_2
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      chefs: chefs
+      page: page
+      recipes: recipes
+      restaurants_: restaurants_
