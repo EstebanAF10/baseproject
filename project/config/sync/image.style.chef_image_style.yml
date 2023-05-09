@@ -1,0 +1,14 @@
+uuid: a8689b55-b322-4342-8b78-6af6a0025bd5
+langcode: en
+status: true
+dependencies: {  }
+name: chef_image_style
+label: 'Chef Image Style'
+effects:
+  e837444b-b341-4f83-9ac5-d3651f3f393e:
+    uuid: e837444b-b341-4f83-9ac5-d3651f3f393e
+    id: image_resize
+    weight: 1
+    data:
+      width: 760
+      height: 420

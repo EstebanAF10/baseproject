@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.chefs.body
     - field.field.node.chefs.field_media
+    - field.field.node.chefs.field_profile_photo
     - field.field.node.chefs.field_specialty
     - node.type.chefs
   module:
+    - media_library
     - path
     - text
 id: node.chefs.default
@@ -40,6 +42,13 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_profile_photo:
+    type: media_library_widget
+    weight: 124
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_specialty:
     type: entity_reference_autocomplete

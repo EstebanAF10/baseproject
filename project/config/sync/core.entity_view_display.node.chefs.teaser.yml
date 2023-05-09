@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.chefs.body
     - field.field.node.chefs.field_media
+    - field.field.node.chefs.field_profile_photo
     - field.field.node.chefs.field_specialty
     - node.type.chefs
   module:
@@ -31,4 +32,5 @@ content:
     region: content
 hidden:
   field_media: true
+  field_profile_photo: true
   field_specialty: true

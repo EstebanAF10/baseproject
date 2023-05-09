@@ -1,0 +1,14 @@
+uuid: 7148b4a6-382c-4469-831d-3c90e9cc5ca5
+langcode: en
+status: true
+dependencies: {  }
+id: imagenes
+label: Imágenes
+description: 'Imágenes de la página'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map:
+  name: name

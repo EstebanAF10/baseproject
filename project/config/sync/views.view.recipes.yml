@@ -1,13 +1,25 @@
-uuid: 5882b2ca-1525-410d-8659-632240abd54e
+uuid: 367208f4-8497-40ef-9719-c799b73295a0
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - field.storage.node.field_cuisine_type
+    - field.storage.node.field_difficulty
     - node.type.recipes
-    - system.menu.admin
+    - system.menu.main
+    - taxonomy.vocabulary.cuisine
+  content:
+    - 'taxonomy_term:cuisine:21a309d3-814b-4fda-b1a9-4761f46b8f72'
+    - 'taxonomy_term:cuisine:3a5bcebc-a147-4412-b8f8-3b8c98e9673c'
+    - 'taxonomy_term:cuisine:4d11425f-d928-4a5c-9196-94213d2ef692'
+    - 'taxonomy_term:cuisine:59c8c998-bc8a-4e37-919a-e6dc078f3285'
+    - 'taxonomy_term:cuisine:60d8efcb-644c-4d46-bd8a-1956189960fa'
+    - 'taxonomy_term:cuisine:8804cc55-17e0-47c4-825b-3901cc9702e9'
+    - 'taxonomy_term:cuisine:8f78c9ab-81e7-4c72-990b-faf22c11628a'
   module:
     - node
+    - options
+    - taxonomy
     - user
 id: recipes
 label: Recipes
@@ -72,8 +84,133 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_cuisine_type:
+          id: field_cuisine_type
+          table: node__field_cuisine_type
+          field: field_cuisine_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Cuisine
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: NA
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_difficulty:
+          id: field_difficulty
+          table: node__field_difficulty
+          field: field_difficulty
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Difficulty
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           items_per_page: 10
@@ -82,6 +219,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -90,6 +229,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -109,21 +249,22 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        title:
-          id: title
+        created:
+          id: created
           table: node_field_data
-          field: title
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: title
-          plugin_id: standard
-          order: ASC
+          entity_field: created
+          plugin_id: date
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
+          granularity: second
       arguments: {  }
       filters:
         status:
@@ -146,12 +287,198 @@ display:
           plugin_id: bundle
           value:
             recipes: recipes
+        field_difficulty_value:
+          id: field_difficulty_value
+          table: node__field_difficulty
+          field: field_difficulty_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value:
+            all: all
+            easy: easy
+            medium: medium
+            difficult: difficult
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_difficulty_value_op
+            label: Difficulty
+            description: ''
+            use_operator: false
+            operator: field_difficulty_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_difficulty_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_cuisine_type_target_id:
+          id: field_cuisine_type_target_id
+          table: node__field_cuisine_type
+          field: field_cuisine_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            24: 24
+            23: 23
+            22: 22
+            20: 20
+            21: 21
+            2: 2
+            1: 1
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_cuisine_type_target_id_op
+            label: 'Cuisine type'
+            description: ''
+            use_operator: false
+            operator: field_cuisine_type_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_cuisine_type_target_id
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: cuisine
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       style:
-        type: default
-      row:
-        type: 'entity:node'
+        type: table
         options:
-          view_mode: teaser
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            title: title
+            field_cuisine_type: field_cuisine_type
+            field_difficulty: field_difficulty
+          default: '-1'
+          info:
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_cuisine_type:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_difficulty:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       query:
         type: views_query
         options:
@@ -169,10 +496,14 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_cuisine_type'
+        - 'config:field.storage.node.field_difficulty'
   page_1:
     id: page_1
     display_title: Page
@@ -184,14 +515,18 @@ display:
       menu:
         type: normal
         title: Recipes
-        menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:entity.menu.edit_form.main'
+        menu_name: main
+        parent: ''
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_cuisine_type'
+        - 'config:field.storage.node.field_difficulty'

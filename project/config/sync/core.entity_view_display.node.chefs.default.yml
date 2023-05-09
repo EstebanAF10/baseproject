@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.chefs.body
     - field.field.node.chefs.field_media
+    - field.field.node.chefs.field_profile_photo
     - field.field.node.chefs.field_specialty
     - node.type.chefs
   module:
@@ -29,6 +30,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_profile_photo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_specialty:
     type: entity_reference_label

@@ -1,0 +1,10 @@
+uuid: d2b4548a-53ec-4813-ac4c-c1bbb79d5e3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.chef_image_scale
+label: 'Chef Image Scale'
+targetEntityType: media
+cache: true

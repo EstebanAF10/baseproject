@@ -1,0 +1,29 @@
+uuid: b8734882-4dd9-445a-8988-353acf962eb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_photo
+    - media.type.imagenes
+    - node.type.chefs
+id: node.chefs.field_profile_photo
+field_name: field_profile_photo
+entity_type: node
+bundle: chefs
+label: 'Profile photo'
+description: "Add chef's profile photo"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      imagenes: imagenes
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
