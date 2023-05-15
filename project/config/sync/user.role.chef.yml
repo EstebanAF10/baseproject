@@ -1,0 +1,43 @@
+uuid: ce2bea07-5a3c-4659-a68e-48dc49b2e37b
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - media.type.imagenes
+    - node.type.article
+    - node.type.chefs
+    - node.type.page
+    - node.type.recipes
+    - node.type.restaurants_
+  module:
+    - block
+    - media
+    - node
+id: chef
+label: Chef
+weight: 4
+is_admin: null
+permissions:
+  - 'administer blocks'
+  - 'create article content'
+  - 'create page content'
+  - 'create recipes content'
+  - 'administer users'
+  - 'edit own document media'
+  - 'edit own image media'
+  - 'edit own imagenes media'
+  - 'create media'
+  - 'delete media'
+  - 'update media'
+  - 'delete own article content'
+  - 'delete own page content'
+  - 'delete own chefs content'
+  - 'delete own recipes content'
+  - 'delete own restaurants_ content'
+  - 'edit own article content'
+  - 'edit own page content'
+  - 'edit own chefs content'
+  - 'edit own recipes content'
+  - 'edit own restaurants_ content'

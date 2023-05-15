@@ -1,0 +1,14 @@
+uuid: 393d8af4-a566-4d89-86e3-ebbd8f50d85b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.chef
+  module:
+    - user
+id: user_add_role_action.chef
+label: 'Add the Chef role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: chef
