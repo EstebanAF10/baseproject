@@ -2,6 +2,8 @@ uuid: bb00841b-f62b-4aff-8f86-bce2604157a6
 langcode: en
 status: true
 dependencies:
+  module:
+    - node
   theme:
     - olivero
 _core:
@@ -17,4 +19,14 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      chefs: chefs
+      page: page
+      restaurants_: restaurants_
