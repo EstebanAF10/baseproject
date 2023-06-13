@@ -1,0 +1,22 @@
+uuid: a8086c56-f9a0-4c86-90ca-3345dbe82498
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ucr
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: ucr_primary_local_tasks
+theme: ucr
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

@@ -1,0 +1,32 @@
+uuid: 851ed941-379b-4c9b-a8f1-f5803ab37050
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - ucr
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: ucr_page_title
+theme: ucr
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      chefs: chefs
+      page: page
+      restaurants_: restaurants_

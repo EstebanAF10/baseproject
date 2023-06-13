@@ -1,0 +1,22 @@
+uuid: 6fb825d2-27d8-46a5-afbe-2b8632c389eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ucr
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: ucr_powered
+theme: ucr
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }
